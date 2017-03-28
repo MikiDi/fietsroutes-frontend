@@ -16,9 +16,9 @@ export default DS.JSONAPISerializer.extend({
   addLinks(fietsroute) {
     // fietsroute.type = 'fietsroute'; //already there, no?
     // delete fietsroute.relationships.segments.data;
-    fietsroute.relationships.segments = {}
+    fietsroute.relationships.segments = {};
     fietsroute.relationships.segments.links = {
-      related: `map2osm/fietsroutes/${fietsroute.id}/segments`
+      related: `/map2osm/fietsroutes/${fietsroute.id}/segments`
     };
     return fietsroute;
   }
