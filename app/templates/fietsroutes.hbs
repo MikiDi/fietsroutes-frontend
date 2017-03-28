@@ -1,0 +1,9 @@
+{{outlet}}
+<h1>Fietsroutes</h1>
+{{#each model as |fietsroute|}}
+  <p>
+    {{#link-to 'fietsroute' fietsroute}}
+      {{fietsroute.name}}
+    {{/link-to}}
+  </p>
+{{/each}}
