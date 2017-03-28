@@ -1,7 +1,13 @@
 {{outlet}}
 <h1>Segments</h1>
-{{#each model.segments as |segment|}}
-  <p>
-    {{segment.n}} {{segment.geojson}}
-  </p>
-{{/each}}
+{{#leaflet-map class="fietsroute" lat=lat lng=lng zoom=zoom}}
+
+  {{tile-layer url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}}
+
+  {{#each model.segments as |segment|}}
+
+    {{#geojson-layer geoJSON=segment.geojson}}
+    {{/geojson-layer}}
+
+  {{/each}}
+{{/leaflet-map}}
