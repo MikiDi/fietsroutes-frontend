@@ -6,7 +6,11 @@
 
   {{#each model.segments as |segment|}}
 
-    {{#geojson-layer geoJSON=segment.geojson}}
+    {{#geojson-layer geoJSON=segment.geojson onEachFeature=onEachFeature}}
+      {{#tooltip-layer sticky=false}}
+        {{segment.n}}: {{segment.osmid}} 
+      {{/tooltip-layer}}
+
     {{/geojson-layer}}
 
   {{/each}}
